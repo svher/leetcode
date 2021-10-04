@@ -6,6 +6,8 @@ import java.util.Map;
 public class Solution_1 implements Solution {
 
     @Override
+    // the longer sequence is valid, the narrow sequence is also valid
+    // but since we want the longest sequence we simply ignore the rest
     public int lengthOfLongestSubstring(String s) {
         Map<Character, Integer> chars = new HashMap<>();
         int ans = 0;

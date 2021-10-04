@@ -3,6 +3,8 @@ package minimum_window_substring;
 public class Solution_1 implements Solution {
 
     @Override
+    // the longer sequence is invalid, the narrow sequence is also invalid
+    // there's no need to check inside
     public String minWindow(String s, String t) {
         int[] freq = new int[128];
         for (char ch : t.toCharArray()) {
