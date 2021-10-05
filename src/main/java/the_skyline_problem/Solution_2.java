@@ -18,7 +18,7 @@ public class Solution_2 implements Solution {
         }
 
         void update(int node, int start, int end, int left, int right, int value) {
-            if (right < left || right < start || left > end) {
+            if (right < left) {
                 return;
             }
             if (start == left && end == right) {
@@ -27,7 +27,6 @@ public class Solution_2 implements Solution {
             }
             int mid = (start + end) >> 1;
             update(node * 2, start, mid, left, Math.min(mid, right), value);
-            // 注意这里要更新的区间是 mid 和 left 的最大值
             update(node * 2 + 1, mid + 1, end, Math.max(left, mid + 1), right, value);
         }
 
@@ -36,8 +35,9 @@ public class Solution_2 implements Solution {
                 return tree[node];
             }
             int mid = (start + end) >> 1;
-            // 递归要传孩子的 index
             int res = index <= mid ? query(node * 2, start, mid, index) : query(node * 2 + 1, mid + 1, end, index);
+            // 由于存在 Lazy Propagation，需要有一个 Max 操作
+            // 因为 tree[node] 表示存在一个更新 [start, end] 区间上最大值的操作
             return Math.max(res, tree[node]);
         }
     }
