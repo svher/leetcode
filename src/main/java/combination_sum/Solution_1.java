@@ -8,7 +8,6 @@ public class Solution_1 implements Solution {
 
     @Override
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
-        Arrays.sort(candidates);
         List<List<Integer>> resList = new ArrayList<>();
         combinationSumImpl(resList, new ArrayList<>(), candidates, target, 0);
         return resList;
