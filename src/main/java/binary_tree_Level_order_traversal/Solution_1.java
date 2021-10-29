@@ -8,7 +8,7 @@ class Solution_1 implements Solution {
 
     public List<List<Integer>> levelOrder(TreeNode root) {
         if (root == null) {
-            return null;
+            return new ArrayList<>();
         }
         Queue<TreeNode> queue = new ArrayDeque<>();
         List<List<Integer>> ans = new ArrayList<>();
