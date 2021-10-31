@@ -56,7 +56,6 @@ public class Main {
             int des = g[src].get(i);
             if (!visited[des]) {
                 dfs(des);
-                e.add(src);
             }
         }
     }

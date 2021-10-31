@@ -20,6 +20,9 @@ public class Solution_1 implements Solution {
             slow = slow.next;
         }
         ListNode res = head;
+        // 2 * (l + m) = l + m + nC
+        // l = nC - m
+        // so res move l, slow move nC - m, they'll meet at the entry position
         while (res != slow) {
             res = res.next;
             slow = slow.next;
