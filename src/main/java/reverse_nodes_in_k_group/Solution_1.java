@@ -16,7 +16,9 @@ public class Solution_1 implements Solution {
             return head;
         } else {
             ListNode cur = head.next, prev = head;
+            // first set this group next
             head.next = reverseKGroup(boundary, k);
+            // then reverse each node in the group starting from the second node
             while (cur != boundary) {
                 ListNode tmp = cur.next;
                 cur.next = prev;
